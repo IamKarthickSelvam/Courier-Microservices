@@ -1,0 +1,26 @@
+<div class="container-fluid py-5">
+    <div class="row container justify-content-center pt-5">
+        <h1 class="py-5">Set Pickup and Destination. . .</h1>
+        <div>
+            <form #pincodeForm="ngForm" (ngSubmit)="changeView()" autocomplete="off">
+                <div class="mb-3 form-group">
+                    <label for="from" class="form-label">Origin / Shipper Pincode</label>
+                    <select class="form-select" name="booking.from" id="from" [(ngModel)]="booking.from">
+                        <option selected>Select Origin Pincode</option>
+                        <option *ngFor="let city of formattedPincodes" [value]="city.code">{{city.displayText}}</option>
+                    </select>
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="to" class="form-label">Destination / Consignee Pincode</label>
+                    <select class="form-select" name="booking.to" id="to" [(ngModel)]="booking.to">
+                        <option selected>Select Destination Pincode</option>
+                        <option *ngFor="let city of formattedPincodes" [value]="city.code">{{city.displayText}}</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-info">Get started</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

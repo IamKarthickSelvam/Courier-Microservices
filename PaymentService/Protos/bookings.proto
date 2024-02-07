@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "BookingService";
+
+// Message to send Id and Amount
+message GrpcBookingModel {
+	int32 bookingId = 1;
+}
+
+// Message to receive status
+message BookingResponse {
+	string Status = 1;
+}
+
+// RPC service definition
+service GrpcPayment {
+	rpc SendPayment (GrpcBookingModel) returns (BookingResponse);
+}

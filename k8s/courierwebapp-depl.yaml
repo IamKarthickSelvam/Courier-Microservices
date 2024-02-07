@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: courierwebapp-depl
+spec:
+  selector:
+    matchLabels:
+      app: courierwebapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: courierwebapp
+    spec:
+      containers:
+        - name: courierwebapp
+          image: karthickselvamdev/courierwebapp:latest
+          imagePullPolicy: Never
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 4200
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: courierwebapp-clusterip-service
+spec:
+  selector:
+    app: courierwebapp
+  ports:
+    - protocol: TCP
+      port: 4200
+      targetPort: 4200

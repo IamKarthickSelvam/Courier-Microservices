@@ -1,0 +1,42 @@
+<div class="container-fluid py-5">
+    <div class="row container pt-5">
+        <h1 class="py-5">Booking Summary</h1>
+        <div class="container col-5 row justify-content-start">
+            <div class="mb-3 d-flex justify-content-between">
+                <div class="fw-bold">Origin Pincode: </div>
+                <div>{{booking.from}}</div>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <div class="fw-bold">Destination Pincode: </div>
+                <div>{{booking.to}}</div>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <div class="fw-bold">Weight: </div>
+                <div>{{booking.weight}} kg(s)</div>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <div class="fw-bold">Length: </div>
+                <div>{{booking.length}} m</div>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <div class="fw-bold">Width: </div>
+                <div>{{booking.width}} m</div>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <div class="fw-bold">Height: </div>
+                <div>{{booking.height}} m</div>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <div class="fw-bold">Content Type: </div>
+                <div>{{booking.contentType}}</div>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <div class="fw-bold">Amount to be Paid: </div>
+                <div>{{booking.amount | currency: 'INR'}}</div>
+            </div>
+        </div>
+        <div class="my-3">
+            <button type="submit" class="btn btn-info" (click)="changeView()">Proceed to Payment</button>
+        </div>
+    </div>
+</div>

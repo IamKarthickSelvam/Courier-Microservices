@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookings-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookingservice
+  template:
+    metadata:
+      labels:
+        app: bookingservice
+    spec:
+      containers:
+        - name: bookingservice
+          image: karthickselvamdev/bookingservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bookings-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: bookingservice
+  ports:
+    - name: bookingservice
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: bookinggrpc
+      protocol: TCP
+      port: 6666
+      targetPort: 6666

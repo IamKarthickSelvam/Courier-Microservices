@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-backend-srv
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: courierfiscal.com
+      http:
+        paths:
+          - path: /api/Booking
+            pathType: Prefix
+            backend:
+              service:
+                name: bookings-clusterip-srv
+                port:
+                  number: 8080
+          - path: /api/Payment
+            pathType: Prefix
+            backend:
+              service:
+                name: payments-clusterip-srv
+                port:
+                  number: 8080
+          - path: /api/Tracking
+            pathType: Prefix
+            backend:
+              service:
+                name: tracking-clusterip-srv
+                port:
+                  number: 8080

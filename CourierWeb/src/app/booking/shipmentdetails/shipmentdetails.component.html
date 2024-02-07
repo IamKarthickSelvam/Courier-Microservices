@@ -1,0 +1,32 @@
+<div class="container-fluid py-5">
+    <div class="row container justify-content-center pt-5">
+        <h1 class="py-5">Shipment Details</h1>
+        <div>
+            <form autocomplete="off">
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Weight (kgs)</label>
+                    <input type="number" class="form-control" name="weight" [(ngModel)]="booking.weight">
+                </div>
+                <label for="measurement" class="form-label">Measurement</label>
+                <div class="mb-3 input-group">
+                    <input type="text" class="form-control" placeholder="Length" name="length" [(ngModel)]="booking.length">
+                    <input type="text"  class="form-control" placeholder="Width" name="width" [(ngModel)]="booking.width">
+                    <input type="text" class="form-control" placeholder="Height" name="height" [(ngModel)]="booking.height">
+                </div>
+                <div class="mb-3">
+                    <label for="shipmentvalue" class="form-label">Shipment Value (INR)</label>
+                    <input type="text" class="form-control" name="value" [(ngModel)]="booking.value">
+                </div>
+                <div class="mb-3">
+                    <label for="contenttype" class="form-label">Content Type</label>
+                    <select class="form-select" name="contenttype" [(ngModel)]="booking.contentType">
+                        <option *ngFor="let contentType of contentTypes">{{contentType}}</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-info" (click)="changeView()">Proceed</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

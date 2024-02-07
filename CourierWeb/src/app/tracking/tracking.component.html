@@ -1,0 +1,16 @@
+<div class="container-fluid py-5 my-5">
+    <div class="container d-flex py-5 my-5">
+        <div class="container row py-5 my-5">
+            <h1>Track Shipment</h1>
+            <p>To track your consigment please enter the Booking ID below:</p>
+            <form autocomplete="off">
+                <div class="mb-3" style="width: 30em">
+                    <input type="text" class="form-control" [(ngModel)]="bookingId" name="bookingId">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-info" (click)="changeView()">Track</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

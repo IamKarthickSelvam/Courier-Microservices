@@ -1,0 +1,61 @@
+<div class="container-fluid py-5">
+    <div class="row container justify-content-center pt-5">
+        <div class="container py-5 my-5">
+            <div class="row text-start justify-content-start my-5">
+                <div class="col-xl-6 col-lg-8">
+                    <h1>Shipment Tracking History</h1>
+                    <p>{{recentUpdate}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                        <div [ngClass]="{'timeline-step': bookingState, 'timeline-step-grey': !bookingState}">
+                            <div class="timeline-content">
+                                <div [ngClass]="{'inner-circle': bookingState, 'inner-circle-grey': !bookingState}"></div>
+                                <p class="h6 mt-3 mb-1">Placed Booking</p>
+                                <p class="h6 mb-0 mb-lg-0 fs-6 fw-light">{{this.bookDate}}</p>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'timeline-step': paymentState, 'timeline-step-grey': !paymentState}">
+                            <div class="timeline-content">
+                                <div [ngClass]="{'inner-circle': paymentState, 'inner-circle-grey': !paymentState}"></div>
+                                <p class="h6 mt-3 mb-1">Payment Settled</p>
+                                <p *ngIf="!paymentIsNull" class="h6 mb-0 mb-lg-0 fs-6 fw-light">{{this.payDate}}</p>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'timeline-step': dispatchedState, 'timeline-step-grey': !dispatchedState}">
+                            <div class="timeline-content">
+                                <div [ngClass]="{'inner-circle': dispatchedState, 'inner-circle-grey': !dispatchedState}"></div>
+                                <p class="h6 mt-3 mb-1">Dispatched from Origin</p>
+                                <p class="h6 mb-0 mb-lg-0 fs-6 fw-light">{{this.dispatchDate}}</p>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'timeline-step': transitState, 'timeline-step-grey': !transitState}">
+                            <div class="timeline-content">
+                                <div [ngClass]="{'inner-circle': transitState, 'inner-circle-grey': !transitState}"></div>
+                                <p class="h6 mt-3 mb-1">Transit</p>
+                                <p class="h6 mb-0 mb-lg-0 fs-6 fw-light"></p>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'timeline-step': arrivedState, 'timeline-step-grey': !arrivedState}">
+                            <div class="timeline-content">
+                                <div [ngClass]="{'inner-circle': arrivedState, 'inner-circle-grey': !arrivedState}"></div>
+                                <p class="h6 mt-3 mb-1">Arrived Hub</p>
+                                <p class="h6 mb-0 mb-lg-0 fs-6 fw-light">{{this.arrivalDate}}</p>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'timeline-step': deliveredState, 'timeline-step-grey': !deliveredState}">
+                            <div class="timeline-content">
+                                <div [ngClass]="{'inner-circle': deliveredState, 'inner-circle-grey': !deliveredState}"></div>
+                                <p class="h6 mt-3 mb-1">Delivered</p>
+                                <p class="h6 mb-0 mb-lg-0 fs-6 fw-light">{{this.deliveryDate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

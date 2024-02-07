@@ -1,0 +1,78 @@
+<div class="container-fluid py-5">
+    <div class="row container pt-5">
+        <h1 class="py-5">Services</h1>
+        <div class="container d-flex justify-content-start">
+            <form autocomplete="off" #amountForm="ngForm">
+                <div class="form-group">
+                    <div class="my-3 form-check">
+                        <input #radio1 class="form-check-input" type="radio" name="flexRadioDefault" id="radio1" value=4
+                            checked>
+                        <label class="form-check-label" for="radio1" (click)="setAmount(radio1.value)">
+                            <div class="d-flex justify-content-between" style="width: 55em">
+                                <div class="row col-9 d-flex justify-content-between">
+                                    <div class="fw-bold">Express Premium</div>
+                                    <div>Day-definite express and secured deliveries for documents and small parcels
+                                        across
+                                        India.</div>
+                                </div>
+                                <div class="row d-flex justify-content-between text-end">
+                                    <div class="fw-bold">{{amount4 | currency: 'INR'}}</div>
+                                    <div>1 day(s)</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="my-3 form-check">
+                        <input #radio2 class="form-check-input" type="radio" name="flexRadioDefault" id="radio2" value=3>
+                        <label class="form-check-label" for="radio2" (click)="setAmount(radio2.value)">
+                            <div class="d-flex justify-content-between" style="width: 55em">
+                                <div class="row col-9 d-flex justify-content-between">
+                                    <div class="fw-bold">Express Standard-Air</div>
+                                    <div>Ideal for secure and quick movement of large parcels via air.</div>
+                                </div>
+                                <div class="row d-flex justify-content-between text-end">
+                                    <div class="fw-bold">{{amount3 | currency: 'INR'}}</div>
+                                    <div>2 - 3 days</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="my-3 form-check">
+                        <input #radio3 class="form-check-input" type="radio" name="flexRadioDefault" id="radio3" value=2>
+                        <label class="form-check-label" for="radio3" (click)="setAmount(radio3.value)">
+                            <div class="d-flex justify-content-between" style="width: 55em">
+                                <div class="row col-9 d-flex justify-content-between">
+                                    <div class="fw-bold">Express Standard-Lite</div>
+                                    <div>Multi Modal Delivery of small parcels across India.</div>
+                                </div>
+                                <div class="row d-flex justify-content-between text-end">
+                                    <div class="fw-bold">{{amount2 | currency: 'INR'}}</div>
+                                    <div>2 - 3 days</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="my-3 form-check">
+                        <input #radio4 class="form-check-input" type="radio" name="flexRadioDefault" id="radio4" value=1>
+                        <label class="form-check-label" for="radio4" (click)="setAmount(radio4.value)">
+                            <div class="d-flex justify-content-between" style="width: 55em">
+                                <div class="row col-9 d-flex justify-content-between">
+                                    <div class="fw-bold">Ground Premium</div>
+                                    <div>Ideal for secure movement of large parcels via cost-effective ground network.
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-between text-end">
+                                    <div class="fw-bold">{{amount1 | currency: 'INR'}}</div>
+                                    <div>2 - 3 days</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-info" (click)="changeView()">Next</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
