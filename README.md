@@ -1,11 +1,11 @@
 # Courier Microservices
 
-A simple courier booking and tracking application which provides end-to-end functionality from booking orders, payment portal to pay for the order after booking and tracking booked and paid orders with a detailed timeline of courier stops. 
+A simple courier booking and tracking application which provides end-to-end functionality from booking orders, payment portal for booked orders and tracking booked and paid orders with a detailed timeline of courier stops. 
 
 The services are all written in C# using .NET Core with ASP.NET Core. Stripe Payments is used to emulate a payment portal. The databases used among these services are SQL Server, SQLite and MongoDB. The web app is written in TypeScript using Angular. All the services are containerized using Linux based Docker and orchestrated in a Kubernetes cluster.
 
 ## Tech Stack
-.NET 8 | Angular v16 | Docker | Kubernetes | RabbitMQ | Stripe | SQL Server | SQLite | MongoDB | Entity Framework Core | gRPC | Automapper | Bootstrap
+.NET 8.0 | Angular v16 | Docker | Kubernetes | RabbitMQ | Stripe | SQL Server | SQLite | MongoDB | Nginx Ingress | Entity Framework Core | gRPC | Automapper | Bootstrap
 
 ## Solution Architecture
 ![Solution Diagram](https://github.com/IamKarthickSelvam/Courier-Microservices/blob/master/Courier%20Microservices.png)
