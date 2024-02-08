@@ -8,7 +8,7 @@ The services are all written in C# using .NET Core with ASP.NET Core. Stripe Pay
 ![Solution Diagram](https://github.com/IamKarthickSelvam/Courier-Microservices/blob/master/Courier%20Microservices.png)
 
 ## Working Demo
-![Working Demo](https://github.com/IamKarthickSelvam/Courier-Microservices/blob/master/Courier%20Microservices%20Demo.mp4)
+![Working Demo](https://github.com/IamKarthickSelvam/Courier-Microservices/assets/102350733/8708dcf2-afaf-423a-a972-92cb726bb935)
 
 ## Application Overview
 Users can make a booking from their origin pincode of their choice and their destination pincode along with few other parameters. After summarising the order, the users are redirected to the payment screen. Stripe Payments was used as the payment portal and upon the status of the payment, the users are redirected to Tracking screen where they can track their order based on the consignment ID (Booking ID) provided at the end of payment.
